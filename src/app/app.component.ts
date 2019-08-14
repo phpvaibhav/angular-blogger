@@ -7,5 +7,5 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'blogger';
-  constructor(public router: Router) {}
+   constructor(public router: Router) {}
 }

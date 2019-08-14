@@ -8,13 +8,13 @@ import { BlogpostDetailComponent } from './blogpost-detail/blogpost-detail.compo
 import { BlogpostRecentComponent } from './blogpost-recent/blogpost-recent.component';
 import { CategoriesComponent } from './categories/categories.component';
 
+
 @NgModule({
   declarations: [BlogpostFeaturedComponent, BlogpostListComponent, BlogpostDetailComponent, BlogpostRecentComponent, CategoriesComponent],
   imports: [
     CommonModule,
     BlogpostRoutingModule
-  ],
-  exports:[
+  ], exports: [
     BlogpostFeaturedComponent
   ]
 })

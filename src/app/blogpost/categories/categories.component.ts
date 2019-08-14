@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogpostService } from '../blogpost.service';
-import { Category } from '../category';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -8,15 +7,9 @@ import { Category } from '../category';
 })
 export class CategoriesComponent implements OnInit {
 
-  categories: Category;
-  error: {};
-
-  constructor(private blogpostService: BlogpostService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.blogpostService.getCategories().subscribe(
-      (data: Category) => this.categories = data
-    );
   }
 
 }
