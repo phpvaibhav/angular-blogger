@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Contact} from '../contact';
+import { CmspageService } from '../cmspage.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit {
-
-  constructor() { }
+  model = new Contact();
+  submitted = false ;
+  error: {};
+  constructor(
+    private router: Router,
+    private cmspageService: CmspageService
+  ) { }
 
   ngOnInit() {
+  }
+  OnSubmit(){
+    this.submitted = true ;
+    return this.cmspageService.contactForm(this.model).subscribe(
+      data => this.model =data,
+      error => this.error = error
+    );
+  }
+  gotoHome(){
+    this.router.navigate(['/']);
   }
 
 }
